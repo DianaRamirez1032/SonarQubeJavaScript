@@ -6,8 +6,7 @@ import { useState } from 'react';
 
 function limpiarNumero(s) {
   try {
-
-    const numInicial = String(s).replaceAll(/,/g, '.');
+    const numInicial = String(s).replaceAll(',', '.');
     const numFinal = Number(numInicial);
 
     return Number.isNaN(numFinal) ? 0 : numFinal;
