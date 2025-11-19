@@ -7,16 +7,16 @@ import React from 'react';
 import { useState } from 'react';
 
 function limpiarNumero(s) {
-  let numero = s;
-  let numFinal = 0;
+  try {
 
-  try { 
-    numFinal = Number(String(numero).replace(',', '.')); 
-  } catch (e) { 
-    console.error("Error en cálculo:", error.message);
-    numFinal = 0; 
+    const numInicial = String(s).replace(/,/g, '.');
+    const numFinal = Number(numInicial);
+
+    return isNaN(numFinal) ? 0 : numFinal;
+  } catch (e) {
+    console.error("Error al quitar las comas:", e.message);
+    return 0;
   }
-  return numFinal
 }
 
 export default function App() {
@@ -56,7 +56,7 @@ export default function App() {
         default: throw new Error("Operador desconocido: " + op + ", por favor use +, -, *, /, ^, %");
       }
     } catch (e) {
-      console.error("Error en cálculo:", error.message);
+      console.error("Error en cálculo:", e.message);
       r = null;
     }
     setRes(r);
