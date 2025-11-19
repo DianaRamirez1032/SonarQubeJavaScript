@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { uiInfo, extractHiddenPrompt } from './hidden.js';
 
 function limpiarNumero(s) {
   let numero = s;
