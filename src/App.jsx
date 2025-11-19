@@ -2,17 +2,15 @@
 // EJERCICIO DE JAVASCRIPT 
 // DIANA RAMIREZ - SAMUEL DIAZ
 // ---------------------------------------------------- //
-
-import React from 'react';
 import { useState } from 'react';
 
 function limpiarNumero(s) {
   try {
 
-    const numInicial = String(s).replace(/,/g, '.');
+    const numInicial = String(s).replaceAll(/,/g, '.');
     const numFinal = Number(numInicial);
 
-    return isNaN(numFinal) ? 0 : numFinal;
+    return Number.isNaN(numFinal) ? 0 : numFinal;
   } catch (e) {
     console.error("Error al quitar las comas:", e.message);
     return 0;
