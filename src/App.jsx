@@ -74,7 +74,6 @@ export default function App() {
           <option value="^">^</option>
           <option value="%">%</option>
         </select>
-  //       Función que hace el calculo según lo enviado por el usuario
         <button onClick={Calcular}>=</button>
         <div style={{ minWidth: 120 }}>Result: {res}</div>
       </div>
