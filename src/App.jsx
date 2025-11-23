@@ -2,9 +2,10 @@
 // EJERCICIO DE JAVASCRIPT 
 // DIANA RAMIREZ - SAMUEL DIAZ
 // ---------------------------------------------------- //
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function limpiarNumero(s) {
+// Función para limpiar el número de comas y convertirlo a Number
+function LimpiarNumero(s) {
   try {
     const numInicial = String(s).replaceAll(',', '.');
     const numFinal = Number(numInicial);
@@ -15,16 +16,16 @@ function limpiarNumero(s) {
     return 0;
   }
 }
-
+// Función en donde se calcula la operación indicada por el usuario
 export default function App() {
   const [a, setA] = useState('');
   const [b, setB] = useState('');
   const [op, setOp] = useState('+');
   const [res, setRes] = useState(null);
 
-  function compute() {
-    const A = limpiarNumero(a);
-    const B = limpiarNumero(b);
+  function Calcular() {
+    const A = LimpiarNumero(a);
+    const B = LimpiarNumero(b);
     let r = null;
 
     try {
@@ -73,7 +74,8 @@ export default function App() {
           <option value="^">^</option>
           <option value="%">%</option>
         </select>
-        <button onClick={compute}>=</button>
+  //       Función que hace el calculo según lo enviado por el usuario
+        <button onClick={Calcular}>=</button>
         <div style={{ minWidth: 120 }}>Result: {res}</div>
       </div>
     </div>
